@@ -9,13 +9,14 @@ Vagrant.configure("2") do |config|
 #   server.vm.box = "bento/centos-6.10"
 #   server.vm.box = "clouddood/RH7.5_baserepo"
     server.vm.box = "clouddood/RH7.5_baserepo"
-    server.vm.host_name = "pg13-client.test.dev"
+    server.vm.host_name = "pg13-systemRH7.test.dev"
 
     server.ssh.forward_agent = true
 
     server.vm.provision "ansible" do |ansible|
 #     ansible.playbook = "deploy_Postgresql_server.yml"
-      ansible.playbook = "deploy_Postgresql_server_DEV.local.yml"
+#     ansible.playbook = "deploy_Postgresql_server_DEV.local.yml"
+      ansible.playbook = "deploy_Postgresql_server_DEV.yml"
       ansible.inventory_path = "vagrant_hosts"
 #     ansible.tags = ansible_tags
 #     ansible.verbose = ansible_verbosity
