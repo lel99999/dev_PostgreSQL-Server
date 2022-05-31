@@ -56,5 +56,7 @@
     - {role: common7, when: "install_glusterfs"}
     - {role: puppet_disable, when: "disable_puppet"}
     - {role: iptables, when: "iptables_config"}
-    - gocd_serverRH7
+    - postgresql13-dbs
+    - postgresql13-server
+    - postgresql13-server-config
 #   - gocd
