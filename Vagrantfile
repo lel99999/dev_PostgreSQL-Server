@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "70"]
   end
 
-  config.vm.define :pg_server do |server|
+  config.vm.define :pg13_systemRH7 do |server|
 #   server.vm.box = "bento/centos-6.10"
 #   server.vm.box = "clouddood/RH7.5_baserepo"
     server.vm.box = "clouddood/RH7.5_baserepo"
