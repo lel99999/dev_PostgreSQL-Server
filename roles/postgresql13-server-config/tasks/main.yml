@@ -15,7 +15,8 @@
     seconds: "{{ pp_server_start_pause }}"
 
 - name: Ensure password is correct
-  postgresql_exec:
+# postgresql_exec:
+  postgresql_query:
     login_host: localhost
     login_user: "{{ pp_superaccount }}"
     port: "{{ pp_serverport }}"
@@ -40,7 +41,8 @@
 # need to be made to allow the configuration scripts
 # to properly execute.
 - name: Execute pre-configuration scripts
-  postgresql_exec:
+# postgresql_exec:
+  postgresql_query:
     login_host: localhost
     login_user: "{{ pp_superaccount }}"
     login_password: "{{ pp_superpassword }}"
@@ -51,7 +53,8 @@
   check_mode: no
 
 - name: Execute configuration scripts
-  postgresql_exec:
+# postgresql_exec:
+  postgresql_query:
     login_host: localhost
     login_user: "{{ pp_superaccount }}"
     login_password: "{{ pp_superpassword }}"
@@ -77,7 +80,8 @@
   check_mode: no
 
 - name: Create Operational DBA schema
-  postgresql_exec:
+# postgresql_exec:
+  postgresql_query:
     login_host: localhost
     login_user: "{{ pp_superaccount }}"
     login_password: "{{ pp_superpassword }}"
@@ -106,7 +110,8 @@
     - template1
 
 - name: Load custom functions for defining privileged Operational DBA actions in template1
-  postgresql_exec:
+# postgresql_exec:
+  postgresql_query:
     login_host: localhost
     login_user: "{{ pp_superaccount }}"
     login_password: "{{ pp_superpassword }}"
@@ -117,7 +122,8 @@
   check_mode: no
 
 - name: Load custom functions for defining privileged Operational DBA actions in postgres
-  postgresql_exec:
+# postgresql_exec:
+  postgresql_query:
     login_host: localhost
     login_user: "{{ pp_superaccount }}"
     login_password: "{{ pp_superpassword }}"
@@ -128,7 +134,8 @@
   check_mode: no
 
 - name: Retrieve list of databases
-  postgresql_exec:
+# postgresql_exec:
+  postgresql_query:
     login_host: localhost
     login_user: "{{ pp_superaccount }}"
     login_password: "{{ pp_superpassword }}"
@@ -144,7 +151,8 @@
   with_items: "{{ database_list.query_result }}"
 
 - name: Update Citus extension
-  postgresql_exec:
+# postgresql_exec:
+  postgresql_query:
     login_host: localhost
     login_user: "{{ pp_superaccount }}"
     login_password: "{{ pp_superpassword }}"
@@ -206,7 +214,8 @@
 
 # Any post-configuration scripts that need to be executed go here
 - name: Execute post-configuration scripts
-  postgresql_exec:
+# postgresql_exec:
+  postgresql_query:
     login_host: localhost
     login_user: "{{ pp_superaccount }}"
     login_password: "{{ pp_superpassword }}"

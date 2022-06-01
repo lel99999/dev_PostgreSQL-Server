@@ -1,4 +1,24 @@
 ---
+- name: Psycopg2 requirement fix
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "@Development tools"
+#   - "@development-tools"
+    - python3-devel
+    - postgresql-libs
+    - postgresql-devel
+    - python-setuptools
+    - python27-python-pip
+    - python-psycopg2
+
+#- name: Make sure psycopg2 is installed
+#  shell: python3 -m pip install psychopg2
+# pip:
+#   name: psycopg2
+#   state: present
+
 - name: Create postgres databases
   postgresql_db:
     login_user: "{{ pp_dba_username }}"
