@@ -22,3 +22,6 @@ PostgreSQL Server Install, Configurations and Deployments including Cutomization
   - rh-postgresql13-postgresql-static.x86_64
   - rh-postgresql13-postgresql-syspaths.x86_64
   - rh-postgresql13-postgresql-test.x86_64
+
+##### Postgresql 10 Info:
+- [https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7.9-x86_64/](https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7.9-x86_64/) <br/>
